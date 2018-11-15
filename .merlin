@@ -1,0 +1,16 @@
+####{BSB GENERATED: NO EDIT
+FLG -ppx '/home/vmarcosp/Projects/reason-parcel/node_modules/bs-platform/lib/reactjs_jsx_ppx_2.exe'
+FLG -ppx /home/vmarcosp/Projects/reason-parcel/node_modules/bs-platform/lib/bsppx.exe
+S /home/vmarcosp/Projects/reason-parcel/node_modules/bs-platform/lib/ocaml
+B /home/vmarcosp/Projects/reason-parcel/node_modules/bs-platform/lib/ocaml
+FLG -nostdlib -color always
+FLG -w -30-40+6+7+27+32..39+44+45+101
+S /home/vmarcosp/Projects/reason-parcel/node_modules/reason-react/lib/ocaml
+B /home/vmarcosp/Projects/reason-parcel/node_modules/reason-react/lib/ocaml
+S src
+B lib/bs/src
+S src/containers/home
+B lib/bs/src/containers/home
+S src/utils
+B lib/bs/src/utils
+####BSB GENERATED: NO EDIT}
