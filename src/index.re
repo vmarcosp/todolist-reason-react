@@ -1,6 +1,6 @@
 open Utils;
 
-importAsset("./global.css");
+importAsset("./global.scss");
 
 let appContainer = "app-container";
 

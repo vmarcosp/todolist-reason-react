@@ -19,7 +19,7 @@ let unmountWatchUrl = (id, _) => unwatchUrl(id);
 
 let pageFromRoute = route =>
   switch (route) {
-  | Home => <Home />
+  | Home => <Todo />
   };
 
 let routeFromPath = path =>
