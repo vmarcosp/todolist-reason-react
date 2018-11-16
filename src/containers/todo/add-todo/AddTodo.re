@@ -1,22 +1,33 @@
 open Reasy;
 
+/**
+ * Types
+ */
 type state = {taskName: string};
 type action =
-  | HandleInputChange(string);
+  | HandleInputChange(string)
+  | ClearInput;
+
+/**
+ *
+ * Functions
+ */
+let transformEvent = event =>
+  event->ReactEvent.Form.target->getEventValue->HandleInputChange;
 
 /**
  *
  * Component
  */
-
 let reducer = (action, _state) =>
   switch (action) {
-  | HandleInputChange(taskName) => ReasonReact.Update({taskName: taskName})
+  | HandleInputChange(taskName) => setState({taskName: taskName})
+  | ClearInput => setState({taskName: ""})
   };
 
-let component = ReasonReact.reducerComponent("AddTodo");
+let component = reducerFactory("AddTodo");
 
-let make = _children => {
+let make = (~onAddNewTodo, _) => {
   ...component,
   reducer,
   initialState: () => {taskName: ""},
@@ -27,16 +38,16 @@ let make = _children => {
         type_="text"
         className="input"
         value={state.taskName}
-        onChange={
-          event =>
-            event
-            ->ReactEvent.Form.target
-            ->getEventValue
-            ->HandleInputChange
-            ->send
-        }
+        onChange={event => event->transformEvent->send}
       />
-      <button onClick={_event => Js.log(state.taskName)} className="button">
+      <button
+        className="button"
+        onClick={
+          _event => {
+            onAddNewTodo(state.taskName);
+            send(ClearInput);
+          }
+        }>
         {strfy("Add")}
       </button>
     </div>,
