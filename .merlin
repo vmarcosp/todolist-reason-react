@@ -15,6 +15,8 @@ S src/containers/todo/todo-list
 B lib/bs/src/containers/todo/todo-list
 S src/containers/todo/add-todo
 B lib/bs/src/containers/todo/add-todo
+S src/containers/todo/todo-item
+B lib/bs/src/containers/todo/todo-item
 S src/utils
 B lib/bs/src/utils
 ####BSB GENERATED: NO EDIT}
