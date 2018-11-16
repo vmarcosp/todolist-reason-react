@@ -1,20 +1,38 @@
 open Utils;
+open Reasy;
+open TodoShared;
 
 importAsset("./style.scss");
 
-type todo = {
-  id: string,
-  name: string,
-  completed: bool,
-};
+type state = {tasks: list(task)};
 
-let component = ReasonReact.statelessComponent("Todo");
+type action =
+  | NewTask(task);
+
+/**
+ * Functions
+ */
+let taskFactory = name => {name, id: "DSADIOJSAID", completed: false};
+
+/**
+ * Component
+*/
+let reducer = (action, state) =>
+  switch (action) {
+  | NewTask(newTask) => setState({tasks: [newTask, ...state.tasks]})
+  };
+
+let component = reducerFactory("Todo");
 
 let make = _children => {
   ...component,
-  render: _self =>
+  reducer,
+  initialState: () => {tasks: []},
+  render: ({send, state}) =>
     <div className="todo-container">
-      <AddTodo onAddNewTodo={taskName => Js.log("here =>" ++ taskName)} />
-      <TodoList />
+      <AddTodo
+        onAddNewTodo={taskName => taskName->taskFactory->NewTask->send}
+      />
+      <TodoList tasks={state.tasks} />
     </div>,
 };
