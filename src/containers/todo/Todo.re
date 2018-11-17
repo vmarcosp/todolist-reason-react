@@ -12,7 +12,7 @@ type action =
 /**
  * Functions
  */
-let taskFactory = name => {name, id: "DSADIOJSAID", completed: false};
+let taskFactory = name => {name, completed: false};
 
 /**
  * Component
@@ -22,12 +22,26 @@ let reducer = (action, state) =>
   | NewTask(newTask) => setState({tasks: [newTask, ...state.tasks]})
   };
 
+let allTasks = [{
+  name: "Go to the market",
+  completed: false,
+},
+{
+  name: "Yoga class",
+  completed: false,
+},
+{
+  name: "Party",
+  completed: false,
+}
+]
+
 let component = reducerFactory("Todo");
 
 let make = _children => {
   ...component,
   reducer,
-  initialState: () => {tasks: []},
+  initialState: () => {tasks: allTasks},
   render: ({send, state}) =>
     <div className="todo-container">
       <AddTodo

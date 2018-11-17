@@ -1,0 +1,28 @@
+.add-todo-container {
+    >.input {
+        outline: 0;
+        padding: 1rem;
+        font-weight: 700;
+        background: #fff;
+        border-radius: 5px;
+        border: solid 0px #afb6c7;
+        color: #38404d;
+        font-size: 16px;
+    } 
+
+    >.button{
+        margin-left: 10px;
+        background: #4472e9;
+        padding: 1rem;
+        border: 0;
+        font-size: 16px;
+        color: white;
+        outline: 0;
+        font-weight: 700;
+        border-radius: 30px;
+        cursor: pointer;
+        &:hover {
+            background: #495ec0;
+        }
+    }
+}

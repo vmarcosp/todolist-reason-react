@@ -1,9 +1,13 @@
 open Reasy;
+open Utils;
+
+importAsset("./style.scss");
 
 /**
  * Types
  */
 type state = {taskName: string};
+
 type action =
   | HandleInputChange(string)
   | ClearInput;
@@ -33,6 +37,7 @@ let make = (~onAddNewTodo, _) => {
   initialState: () => {taskName: ""},
   render: ({send, state}) =>
     <div className="add-todo-container">
+      
       <input
         placeholder="Type your task name"
         type_="text"
@@ -40,15 +45,15 @@ let make = (~onAddNewTodo, _) => {
         value={state.taskName}
         onChange={event => event->transformEvent->send}
       />
+     
       <button
         className="button"
-        onClick={
-          _event => {
+        onClick={_event => {
             onAddNewTodo(state.taskName);
             send(ClearInput);
-          }
-        }>
-        {strfy("Add")}
+          }}>
+        {strfy("Add new task")}
       </button>
+
     </div>,
 };

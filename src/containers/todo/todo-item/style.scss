@@ -1,0 +1,7 @@
+.todo-item {
+    list-style: none;
+    >.name {
+        color: #38404d;
+        font-weight: 700;
+    }
+}
