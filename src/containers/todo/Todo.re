@@ -2,7 +2,7 @@ open Utils;
 open Reasy;
 open TodoShared;
 
-importAsset("./style.scss");
+cssfy("./style.scss");
 
 type state = {tasks: list(task)};
 
@@ -32,9 +32,8 @@ let allTasks = [{
 },
 {
   name: "Party",
-  completed: false,
-}
-]
+  completed: true,
+}];
 
 let component = reducerFactory("Todo");
 

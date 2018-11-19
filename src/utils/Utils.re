@@ -2,4 +2,6 @@
 
 [@bs.val] external accept: unit => unit = "module.hot.accept";
 
-[@bs.val] external importAsset: string => unit = "require";
+[@bs.val] external cssfy: string => unit = "require";
+
+[@bs.val] external import: string => string = "require";

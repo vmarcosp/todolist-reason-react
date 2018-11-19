@@ -2,7 +2,7 @@ open Reasy;
 open TodoShared;
 open Utils;
 
-importAsset("./style.scss");
+cssfy("./style.scss");
 
 let component = ReasonReact.statelessComponent("TodoList");
 

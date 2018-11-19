@@ -1,7 +1,7 @@
 open Reasy;
 open Utils;
 
-importAsset("./style.scss");
+cssfy("./style.scss");
 
 /**
  * Types

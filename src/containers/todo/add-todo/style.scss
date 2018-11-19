@@ -1,5 +1,8 @@
 .add-todo-container {
+    width: 500px;
+    display: flex;
     >.input {
+        flex-grow: 2;
         outline: 0;
         padding: 1rem;
         font-weight: 700;
@@ -11,6 +14,7 @@
     } 
 
     >.button{
+        flex-grow: 1;
         margin-left: 10px;
         background: #4472e9;
         padding: 1rem;

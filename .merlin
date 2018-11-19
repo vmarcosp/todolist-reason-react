@@ -9,6 +9,8 @@ S /home/vmarcosp/Projects/reason-parcel/node_modules/reason-react/lib/ocaml
 B /home/vmarcosp/Projects/reason-parcel/node_modules/reason-react/lib/ocaml
 S src
 B lib/bs/src
+S src/containers/components/checkbox
+B lib/bs/src/containers/components/checkbox
 S src/containers/todo
 B lib/bs/src/containers/todo
 S src/containers/todo/todo-list

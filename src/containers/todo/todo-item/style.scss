@@ -1,7 +1,31 @@
 .todo-item {
     list-style: none;
-    >.name {
-        color: #38404d;
-        font-weight: 700;
+    position: relative;
+    padding: 15px 25px 15px 45px;
+    display: flex;
+    justify-content: space-between;
+    >.infos {       
+        display: flex;
+        flex-flow: column wrap;
+
+        >.date {
+            color: #b3b8c0;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        
+        >.name {
+            font-size: 20px;
+            font-weight: 600;   
+            color: #38404d;
+            font-weight: 700;
+        }
+    }
+
+    >.infos.completed {
+        >.name {
+            text-decoration: line-through;
+            font-style: italic;
+        }
     }
 }
