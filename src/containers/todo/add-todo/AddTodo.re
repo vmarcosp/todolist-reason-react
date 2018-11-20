@@ -29,7 +29,7 @@ let reducer = (action, _state) =>
   | ClearInput => setState({taskName: ""})
   };
 
-let component = reducerFactory("AddTodo");
+let component = ReasonReact.reducerComponent("AddTodo");
 
 let make = (~onAddNewTodo, _) => {
   ...component,

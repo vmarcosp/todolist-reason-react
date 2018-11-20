@@ -1,5 +1,15 @@
 open Belt;
 
+type context;
+
+[@bs.get] external provider: context => ReasonReact.reactClass = "Provider";
+[@bs.get] external consumer: context => ReasonReact.reactClass = "Consumer";
+[@bs.module "react"] external createContext: 'a => context = "";
+
+
+/**
+* Render utils 
+*/
 let strfy = ReasonReact.string;
 let intfy = v => v->string_of_int->strfy;
 let boolfy = v => v->string_of_bool->strfy;
@@ -12,5 +22,8 @@ let getCheckboxValue = event => {
 }
 
 let getEventValue = target => target##value;
+
+/**
+* ReasonReact utils
+*/
 let setState = value => ReasonReact.Update(value);
-let reducerFactory = name => ReasonReact.reducerComponent(name);

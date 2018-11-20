@@ -1,18 +1,34 @@
 open Utils;
 open Reasy;
 open TodoShared;
+open TodoContext;
+open List;
 
 cssfy("./style.scss");
 
 type state = {tasks: list(task)};
 
 type action =
-  | NewTask(task);
+  | NewTask(task)
+  | CompleteTask(task);
 
 /**
  * Functions
  */
-let taskFactory = name => {name, completed: false};
+let taskFactory = name => { name, completed: false };
+
+let completeTask = ({ tasks }, { name, completed }) => {
+  let filteredTasks = tasks 
+                      |> filter(currentTask => currentTask.name !== name)
+
+  let completedTask = {
+    name, 
+    completed: !completed 
+  };
+
+  setState({ tasks: [completedTask, ...filteredTasks] });
+};
+
 
 /**
  * Component
@@ -20,32 +36,25 @@ let taskFactory = name => {name, completed: false};
 let reducer = (action, state) =>
   switch (action) {
   | NewTask(newTask) => setState({tasks: [newTask, ...state.tasks]})
+  | CompleteTask(task) => completeTask(state, task)
   };
 
-let allTasks = [{
-  name: "Go to the market",
-  completed: false,
-},
-{
-  name: "Yoga class",
-  completed: false,
-},
-{
-  name: "Party",
-  completed: true,
-}];
-
-let component = reducerFactory("Todo");
+let component = ReasonReact.reducerComponent("Todo");
 
 let make = _children => {
   ...component,
   reducer,
-  initialState: () => {tasks: allTasks},
+  initialState: () => { tasks: [] },
   render: ({send, state}) =>
-    <div className="todo-container">
-      <AddTodo
-        onAddNewTodo={taskName => taskName->taskFactory->NewTask->send}
-      />
-      <TodoList tasks={state.tasks} />
-    </div>,
+  <TodoContext.Provider value={ 
+      tasks: state.tasks, 
+      completeTodo: task => send(CompleteTask(task))
+    }>
+      <div className="todo-container">
+        <AddTodo
+          onAddNewTodo={taskName => taskName->taskFactory->NewTask->send}
+        />
+        <TodoList />
+      </div>
+  </TodoContext.Provider>,
 };

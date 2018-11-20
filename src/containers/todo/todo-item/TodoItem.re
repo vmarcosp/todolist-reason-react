@@ -12,7 +12,7 @@ let getItemClass = completed => completed ? "infos completed" : "infos";
 */
 let component = ReasonReact.statelessComponent("TodoItem")
 
-let make = (~task: task, _children) => {
+let make = (~task: task, ~onComplete, _children) => {
     ...component,
     render: _self => 
     <li className="todo-item">
@@ -22,6 +22,6 @@ let make = (~task: task, _children) => {
         </div>
         <Checkbox
             value=task.completed
-            onChange={event => event->getCheckboxValue->Js.log} />
+            onChange={onComplete} />
     </li>
 };
