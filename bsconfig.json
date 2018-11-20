@@ -8,7 +8,8 @@
         }
     ],
     "bs-dependencies": [
-        "reason-react"
+        "reason-react",
+        "bs-moment"
     ],
     "reason": {
         "react-jsx": 2

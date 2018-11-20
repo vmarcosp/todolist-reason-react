@@ -7,6 +7,8 @@ FLG -nostdlib -color always
 FLG -w -30-40+6+7+27+32..39+44+45+101
 S /home/vmarcosp/Projects/reason-parcel/node_modules/reason-react/lib/ocaml
 B /home/vmarcosp/Projects/reason-parcel/node_modules/reason-react/lib/ocaml
+S /home/vmarcosp/Projects/reason-parcel/node_modules/bs-moment/lib/ocaml
+B /home/vmarcosp/Projects/reason-parcel/node_modules/bs-moment/lib/ocaml
 S src
 B lib/bs/src
 S src/containers/components/checkbox

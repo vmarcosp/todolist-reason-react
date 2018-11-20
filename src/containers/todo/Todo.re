@@ -15,15 +15,15 @@ type action =
 /**
  * Functions
  */
-let taskFactory = name => { name, completed: false };
+let taskFactory = name => { name, completed: false, createdAt: Js.Date.now() };
 
-let completeTask = ({ tasks }, { name, completed }) => {
+let completeTask = ({ tasks }, task) => {
   let filteredTasks = tasks 
-                      |> filter(currentTask => currentTask.name !== name)
+                      |> filter(currentTask => currentTask.name !== task.name)
 
   let completedTask = {
-    name, 
-    completed: !completed 
+    ...task,
+    completed: !task.completed
   };
 
   setState({ tasks: [completedTask, ...filteredTasks] });
@@ -46,15 +46,18 @@ let make = _children => {
   reducer,
   initialState: () => { tasks: [] },
   render: ({send, state}) =>
+
   <TodoContext.Provider value={ 
       tasks: state.tasks, 
       completeTodo: task => send(CompleteTask(task))
     }>
+
       <div className="todo-container">
         <AddTodo
           onAddNewTodo={taskName => taskName->taskFactory->NewTask->send}
         />
         <TodoList />
       </div>
+  
   </TodoContext.Provider>,
 };
