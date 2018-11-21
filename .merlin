@@ -13,6 +13,8 @@ S src
 B lib/bs/src
 S src/containers/components/checkbox
 B lib/bs/src/containers/components/checkbox
+S src/containers/components/logo
+B lib/bs/src/containers/components/logo
 S src/containers/todo
 B lib/bs/src/containers/todo
 S src/containers/todo/todo-list

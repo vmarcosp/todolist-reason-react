@@ -1,0 +1,23 @@
+.logo-container {
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    position: fixed;
+    width: 180px;
+    margin-left: -120px;
+    top: 0;
+    left: 50%;
+    >.name {
+        position: absolute;
+        right: -90px;
+        background: #f1f4fb;
+        color: #38404d;
+        font-weight: 700;
+        font-size: 40px;
+    }
+
+    >img {
+    }
+}
