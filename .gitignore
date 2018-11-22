@@ -76,5 +76,6 @@ typings/
 .fusebox/
 
 cache/
+dist/
 lib/
 *.bs.js

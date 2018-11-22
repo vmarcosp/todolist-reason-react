@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "parcel --port 3000 watch ./index.html",
-    "build": "echo building"
+    "build": "parcel build index.html"
   },
   "devDependencies": {
     "bs-platform": "^4.0.7",
