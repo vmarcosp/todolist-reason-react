@@ -1,0 +1,17 @@
+.blank-state-container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-flow: column;
+    >.icon {
+        width: 140px;
+    }
+    >.message {
+        color: #38404d;
+        margin-top: 20px;
+        font-size: 22px;
+        font-weight: 700;
+    }
+}

@@ -21,12 +21,7 @@ let completeTask = ({ tasks }, task) => {
   let filteredTasks = tasks 
                       |> filter(currentTask => currentTask.name !== task.name)
 
-  let completedTask = {
-    ...task,
-    completed: !task.completed
-  };
-
-  setState({ tasks: [completedTask, ...filteredTasks] });
+  setState({ tasks: filteredTasks });
 };
 
 

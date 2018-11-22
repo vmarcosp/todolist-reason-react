@@ -12,9 +12,13 @@ let make = (_children) => {
   <TodoContext.Consumer>
     ...{({ completeTodo, tasks }) => (
       <ul className="todo-list-container">
-        {tasks
-          ->mapfy(task => <TodoItem onComplete={_ => completeTodo(task)} key={task.name} task={task} />)
-          ->arrayfy
+        {
+          if(List.length(tasks) > 0)
+            tasks
+              ->mapfy(task => <TodoItem onComplete={_ => completeTodo(task)} key={task.name} task={task} />)
+              ->arrayfy
+          else
+            <BlankState />
         }
       </ul>
     )}
