@@ -4,12 +4,14 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "parcel --port 3000 watch ./index.html",
-    "build": "parcel build index.html"
+    "start": "parcel --port 3500 watch ./index.html",
+    "build": "parcel build index.html",
+    "api": "json-server --watch ./api.json"
   },
   "devDependencies": {
     "bs-platform": "^4.0.7",
     "bsb-js": "^1.1.7",
+    "json-server": "^0.15.0",
     "parcel-bundler": "^1.10.3",
     "sass": "^1.15.0"
   },

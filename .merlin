@@ -1,32 +1,34 @@
 ####{BSB GENERATED: NO EDIT
-FLG -ppx '/home/vmarcosp/Projects/reason-parcel/node_modules/bs-platform/lib/reactjs_jsx_ppx_2.exe'
-FLG -ppx /home/vmarcosp/Projects/reason-parcel/node_modules/bs-platform/lib/bsppx.exe
-S /home/vmarcosp/Projects/reason-parcel/node_modules/bs-platform/lib/ocaml
-B /home/vmarcosp/Projects/reason-parcel/node_modules/bs-platform/lib/ocaml
+FLG -ppx '/home/marcos/Projects/todolist-reason-react/node_modules/bs-platform/lib/reactjs_jsx_ppx_2.exe'
+FLG -ppx /home/marcos/Projects/todolist-reason-react/node_modules/bs-platform/lib/bsppx.exe
+S /home/marcos/Projects/todolist-reason-react/node_modules/bs-platform/lib/ocaml
+B /home/marcos/Projects/todolist-reason-react/node_modules/bs-platform/lib/ocaml
 FLG -nostdlib -color always
 FLG -w -30-40+6+7+27+32..39+44+45+101
-S /home/vmarcosp/Projects/reason-parcel/node_modules/reason-react/lib/ocaml
-B /home/vmarcosp/Projects/reason-parcel/node_modules/reason-react/lib/ocaml
-S /home/vmarcosp/Projects/reason-parcel/node_modules/bs-moment/lib/ocaml
-B /home/vmarcosp/Projects/reason-parcel/node_modules/bs-moment/lib/ocaml
+S /home/marcos/Projects/todolist-reason-react/node_modules/reason-react/lib/ocaml
+B /home/marcos/Projects/todolist-reason-react/node_modules/reason-react/lib/ocaml
+S /home/marcos/Projects/todolist-reason-react/node_modules/bs-moment/lib/ocaml
+B /home/marcos/Projects/todolist-reason-react/node_modules/bs-moment/lib/ocaml
 S src
 B lib/bs/src
-S src/containers/components/checkbox
-B lib/bs/src/containers/components/checkbox
-S src/containers/components/blank-state
-B lib/bs/src/containers/components/blank-state
-S src/containers/components/footer
-B lib/bs/src/containers/components/footer
-S src/containers/components/logo
-B lib/bs/src/containers/components/logo
-S src/containers/todo
-B lib/bs/src/containers/todo
-S src/containers/todo/todo-list
-B lib/bs/src/containers/todo/todo-list
-S src/containers/todo/add-todo
-B lib/bs/src/containers/todo/add-todo
-S src/containers/todo/todo-item
-B lib/bs/src/containers/todo/todo-item
+S src/components/text
+B lib/bs/src/components/text
+S src/components/checkbox
+B lib/bs/src/components/checkbox
+S src/components/logo
+B lib/bs/src/components/logo
+S src/components/blank-state
+B lib/bs/src/components/blank-state
+S src/components/footer
+B lib/bs/src/components/footer
 S src/utils
 B lib/bs/src/utils
+S src/containers/todo
+B lib/bs/src/containers/todo
+S src/containers/todo/add-todo
+B lib/bs/src/containers/todo/add-todo
+S src/containers/todo/todo-list
+B lib/bs/src/containers/todo/todo-list
+S src/containers/todo/todo-item
+B lib/bs/src/containers/todo/todo-item
 ####BSB GENERATED: NO EDIT}

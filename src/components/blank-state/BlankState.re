@@ -16,6 +16,8 @@ let make = _children => {
             alt="Blank State Icon" 
             className="icon"
         />
-        <span className="message">{strfy("Nothing todo")}</span>
-    </div>
+        <span className="message">
+            {strfy("Nothing todos")}
+        </span>
+    </div>  
 }

@@ -1,0 +1,24 @@
+{
+  "tasks": [
+    {
+      "id": 0,
+      "name": "Ir ao mercado",
+      "completed": false
+    },
+    {
+      "id": 1,
+      "name": "Festa John Due",
+      "completed": false
+    },
+    {
+      "id": 2,
+      "name": "Reunião semanal",
+      "completed": false
+    },
+    {
+      "id": 3,
+      "name": "Reunião com o cliente",
+      "completed": false
+    }
+  ]
+}

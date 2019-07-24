@@ -50,7 +50,12 @@ let make = _children => {
       
       <div className="todo-container">
         <AddTodo
-            onAddNewTodo={taskName => taskName->taskFactory->NewTask->send}
+            onAddNewTodo={taskName => 
+              taskName->
+              taskFactory->
+              NewTask->
+              send
+            }
         />
         <TodoList />
       </div>
